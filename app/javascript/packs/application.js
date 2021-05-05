@@ -15,6 +15,9 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+// import the bootstrap javascript module
+import "bootstrap"
+
 
 Rails.start()
 Turbolinks.start()
