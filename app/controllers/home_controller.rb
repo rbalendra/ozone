@@ -4,12 +4,17 @@ class HomeController < ApplicationController
     require 'net/http'
     require 'json'
     
-    # @url = 'https://gateway.api.epa.vic.gov.au/environmentMonitoring/v1/sites?environmentalSegment=air&X-API-Key=1834add8b4b54dc1859f897d0bc36bfa'
 
     @url = 'https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=89129&distance=2&API_KEY=E254B2FB-2C0C-4A9D-8514-CA8389847F79'
+
+
+    # @url = 'https://gateway.api.epa.vic.gov.au/environmentMonitoring/v1/sites?environmentalSegment=air'
+
     @uri = URI(@url)
     @response = Net::HTTP.get(@uri)
     @output = JSON.parse(@response)
+
+
 
 
     #check for empty return results
